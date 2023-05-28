@@ -1,0 +1,324 @@
+:root {
+    --surface-color: #fff;
+    --curve: 40;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #a8d8ea;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .card {
+    position: relative;
+    display: block;
+    height: 100%;  
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+  }
+  
+  
+  .card__image {      
+    width: 550px;
+    height: 400px;
+  }
+  /* hieu ung len xuong */
+  .card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;      
+    border-radius: calc(var(--curve) * 1px);    
+    background-color: var(--surface-color);      
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+  }
+   /* hieu ung len xuong */
+  .card:hover .card__overlay {
+    transform: translateY(0);
+  }
+   /* hieu ung len xuong */
+  .card__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;    
+    background-color: var(--surface-color);
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+  }
+  
+  .card__arc {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;      
+    z-index: 1;
+  }
+  
+  .card__arc path {
+    fill: var(--surface-color);
+  }       
+   
+  .card:hover .card__header {
+    transform: translateY(0);
+  }
+  
+  .card__thumb {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;      
+    border-radius: 50%;      
+  }
+  
+  .card__title {
+    font-size: 1em;
+    margin: 0 0 .3em;
+    color: #6A515E;
+  }
+  
+  .card__tagline {
+    display: block;
+    margin: 1em 0;
+    font-family: "MockFlowFont";  
+    font-size: .8em; 
+    color: #D7BDCA;  
+  }
+  
+  .card__status {
+    font-size: .8em;
+    color: #D7BDCA;
+  }
+  
+  .card__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    color: #D7BDCA;
+    font-family: "MockFlowFont";   
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }    
+  .chinhvitri
+  {
+   margin: 0 auto;
+  }
+  .nutdechoigame 
+{
+    position: relative;
+    padding: 10px 22px ;
+    background:#7d2ae8;
+    border-radius: 6px;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 5px 10px rgb(0,0,0,0.1);
+}
+.nutdechoigame:active
+{
+  transform: scale(0.96);
+}
+/*
+.nuttrove::before
+.nutrove::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 150%;
+  border: 2px solid red;
+  background-repeat: no-repeat;
+}
+.navbar .nutrove::before{
+  top:-70%;
+  background-image: radial-gradient(circle,#7d2ae8 20%, transparent 20%),
+  radial-gradient(circle, transparent 20%,#7d2ae8 20%, transparent 30%),
+  radial-gradient(circle,#7d2ae8 20%, transparent 20%),
+  radial-gradient(circle, transparent 10%,#7d2ae8 20%, transparent 20%),
+  radial-gradient(circle,#7d2ae8 20%, transparent 20%)
+  radial-gradient(circle,#7d2ae8 20%, transparent 20%)
+  radial-gradient(circle,#7d2ae8 20%, transparent 20%)
+  radial-gradient(circle,#7d2ae8 20%, transparent 20%)
+  radial-gradient(circle,#7d2ae8 20%, transparent 20%);
+  background-size:10% 10%,20 ,20%,20 ,20%,18% 18%,10% 10%,15% 15%, 18% 18%;
+  background-position: 5% 90%, 10% 90%, 10% 90%,15% 90%,20% 90%, 25% 90%, 25% 90%, 70% 90%,;
+}
+.nuttrove::after
+{
+  bottom: -70%;
+}
+.nutrove
+{
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  justify-content:center;
+  
+  padding: 10px 22px;
+  background: blue;
+  border-radius: 20px;
+  color :#fff;
+  border : none;
+  font-size:18px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 5px 10px rgb(0, 0, 0.1);
+}
+.nutrove :active{
+  transform: scale(0.5);
+}
+.nutrove ::before,
+.nutrove ::after
+{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 150%;
+ z-index: -1;;
+  transform: translateX(-50%);
+  background-repeat: no-repeat;
+}
+.nuttrove ::before{
+  top: -70%;
+  background-image: radial-gradient(circle,#7d2ae8 20%,transparent 20%),
+  radial-gradient(circle,transparent 20%, #7d2ae8 20%,transparent 30%),
+  radial-gradient(circle,#7d2ae8 20%,transparent 20%),
+  radial-gradient(circle,transparent 20%, #7d2ae8 15%,transparent 20%),
+  radial-gradient(circle,#7d2ae8 20%,transparent 20%),
+  radial-gradient(circle,#7d2ae8 20%,transparent 20%),
+  radial-gradient(circle,#7d2ae8 20%,transparent 20%),
+  radial-gradient(circle,#7d2ae8 20%,transparent 20%);
+  background-size: 10% 10%, 20% 20, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 18% 18%,
+  18% 18%;
+  background-position: 5% 90%, 10% 90%,10% 90%, 10% 90%, 15% 90%, 20% 90%, 25% 90%,
+  30% 90%, 40% 90%, 55% 90%, 70% 90%, 75% 90%, 80% 90%, 85% 90%;
+  animation: topBubbles 0.6 ease-in-out infinite;
+}
+@keyframes topBubbles{
+  50%{
+  background-position: 5% 90%, 10% 90%,10% 90%, 10% 90%, 15% 90%, 20% 90%, 25% 90%,
+  30% 90%, 40% 90%, 55% 90%, 70% 90%, 75% 90%, 80% 90%, 85% 90%;
+  background-size: 10% 10%, 20% 20, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 18% 18%,
+  18% 18%;
+}
+}
+.nuttrove.animate :before{
+  bottom: -70%;
+  background-image: radial-gradient(circle,#7d2ae8 20%,transparent 20%),
+  radial-gradient(circle,transparent 20%, #7d2ae8 15%,transparent 20%),
+  radial-gradient(circle,#7d2ae8 20%,transparent 20%),
+  radial-gradient(circle,#7d2ae8 20%,transparent 20%),
+  radial-gradient(circle,#7d2ae8 20%,transparent 20%),
+  radial-gradient(circle,#7d2ae8 20%,transparent 20%),
+  radial-gradient(circle,#7d2ae8 20%,transparent 20%);
+  background-position: 5% 90%, 10% 90%,10% 90%, 10% 90%, 15% 90%, 20% 90%, 25% 90%,
+  30% 90%, 40% 90%, 55% 90%, 70% 90%, 75% 90%, 80% 90%, 85% 90%;
+  background-size: 10% 10%, 20% 20, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 18% 18%,
+  18% 18%;
+  animation: bottomBubbles 0.6 ease-in-out infinite;
+}
+@keyframes bottomBubbles {
+  50%{
+    background-position: 5% 90%, 10% 90%,10% 90%, 10% 90%, 15% 90%, 20% 90%, 25% 90%,
+    30% 90%, 40% 90%, 55% 90%, 70% 90%, 75% 90%, 80% 90%, 85% 90%;
+  }
+  100%{
+    background-position: 5% 90%, 10% 90%,10% 90%, 10% 90%, 15% 90%, 20% 90%, 25% 90%,
+  30% 90%, 40% 90%, 55% 90%, 70% 90%, 75% 90%, 80% 90%, 85% 90%;
+  background-size: 10% 10%, 20% 20, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 18% 18%,
+  18% 18%;
+  }
+}*/
+.nav{
+  position: absolute;
+  top:0;
+  left:0;
+  width:80%;
+  padding:0 10%;
+  border-bottom: 5px solid rgba(155, 154, 154, 0);
+  display: flex;
+  align-items: center;
+  color:#1976f1;
+  z-index: 11111111111111111;
+}
+.nav .logo img{
+  width:60px
+}
+.nav ul{
+  padding: 0;
+  margin:0;
+  list-style: none;
+  margin-left:50px;
+  display: flex;
+  align-items: center;
+}
+.nav ul li{
+  padding:0 55px;
+  font-size: 25px;
+}
+.navbar li{
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  padding: 6px 15px;
+  border-radius: 20px;
+}
+.banner{
+  height:11vh;
+  width:100%;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+banner .title{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  font-size: 8.5vh;
+  opacity: 0;
+}
+.navbar .nuttrove a{
+  text-decoration: none;
+}
+.banner .title h1{
+  padding-top:10px;
+}
+.navbar {
+  text-decoration: none;
+  font-size: 18px;
+  transition: .3s;
+  cursor: pointer;
+}
+.navbar li:hover{
+  color: #00abf0;
+  background: white;
+}
+.navbar .nuttrove  a{
+color:white;
+}
+.navbar .nuttrove a:hover{
+  color : #00abf0;
+}
